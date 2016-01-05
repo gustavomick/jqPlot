@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js" ></script>
+
+	<script type="text/javascript" src="../src/jquery.jqplot.js"></script>
+	<script type="text/javascript" src="../src/plugins/jqplot.meterGaugeRenderer.js"></script>
+
+	<link rel="stylesheet" type="text/css" hrf="../src/jquery.jqplot.min.css" />
+	<style type="text/css">
+		.jqplot-meterGauge-tick
+		{
+		font-size: .7em;
+		font-weight: bold;
+		font-family: arial;
+
+		}
+		.jqplot-meterGauge-tick-selected{
+			border:2px solid lightgreen;
+			background-color: #10BB10;
+			min-width: 1em;
+			text-align:center;
+			padding:2px;
+			border-radius: 1em;
+			width:auto;
+		}
+		.jqplot-meterGauge-tick-selected-0{
+			border:2px solid red;
+			background-color: #FF7790;
+			min-width: 1em;
+			text-align:center;
+			padding:2px;
+			border-radius: 1em;
+			width:auto;
+			// color:red !important;
+			font-weight: bolder !important;
+		}
+		.jqplot-meterGauge-tick-selected-1{
+			border:2px solid #FFEE9C;
+			background-color: yellow;
+			min-width: 1em;
+			text-align:center;
+			padding:2px;
+			border-radius: 1em;
+			width:auto;
+		}
+		.jqplot-meterGauge-tick-selected-2{
+			border:2px solid lightgreen;
+			background-color: #10BB10;
+			min-width: 1em;
+			text-align:center;
+			padding:2px;
+			border-radius: 1em;
+			width:auto;
+		}
+	</style>
+</head>
+<body>
+<table style="width:100%">
+	<tr>
+	<td>
+		<div id="chart1"></div>
+	</td>
+	<td>
+		<div id="chart2"></div>
+	</td>
+	<td>
+		<div id="chart3"></div>
+	</td>
+	</tr>
+</table>
+	
+</body>
+	<script type="text/javascript" src="./meterGauge.js"></script>
+</html>

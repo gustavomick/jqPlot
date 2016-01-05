@@ -166,6 +166,11 @@
         this.pegNeedle = true;
         this._type = 'meterGauge';
         
+        this.selectedClass = "jqplot-meterGauge-tick-selected";
+
+
+
+
         $.extend(true, this, options);
         this.type = null;
         this.numberTicks = null;
@@ -668,7 +673,7 @@
             
             ctx.save();
             ctx.beginPath();  
-            ctx.fillStyle = this.ringColor;
+            ctx.fillStyle = this.needleColor; //ringColor;
             ctx.arc(0 ,0, this.hubRadius,hubsa, hubea, false);
             ctx.closePath();
             ctx.fill();
@@ -712,6 +717,9 @@
                 var tp = this.tickPadding * (1 - 1/(this.diameter/80+1));
                 for (i=0; i<this.ticks.length; i++) {
                     elem = $('<div class="jqplot-meterGauge-tick" style="position:absolute;">'+this.ticks[i][1]+'</div>');
+
+                    if(this.data[0][1]==i){elem.addClass(this.selectedClass)}
+
                     this.canvas._elem.after(elem);
                     ew = elem.outerWidth(true);
                     eh = elem.outerHeight(true);
@@ -797,8 +805,8 @@
             
             ctx.save();
             ctx.beginPath();
-            ctx.fillStyle = this.ringColor;
-            ctx.strokeStyle = this.ringColor;
+            ctx.fillStyle = this.needleColor;// ringColor;
+            ctx.strokeStyle = this.needleColor;//ringColor;
             this.needleLength = (this.tickOuterRadius - this.tickLength) * 0.85;
             this.needleThickness = (this.needleThickness < 2) ? 2 : this.needleThickness;
             var endwidth = this.needleThickness * 0.4;
